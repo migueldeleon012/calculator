@@ -11,9 +11,32 @@ choices.forEach(item => {
 
 //written inputs here because of rendering above
 const inputs = document.querySelectorAll('.input')
+        const resultContainer = document.querySelector('.calculator__result')
 
 handleInputClick = (e) =>{
-    console.log(e.target.textContent)
+    let splittedResult = resultContainer.textContent.split(' ')
+    let targetText = e.target.textContent
+    switch(targetText){
+        case '+':
+        case '-':
+        case '*':
+        case '/':
+            //used space
+            resultContainer.textContent+= ` ${targetText} `
+            break
+        case 'C':
+            resultContainer.textContent = ''
+            break
+        case '=':
+            console.log(splittedResult)
+            break
+        case '.':
+            splittedResult[splittedResult.length-1].includes(targetText) ? false : resultContainer.textContent += targetText
+            break
+        default:
+            resultContainer.textContent+=e.target.textContent
+            break
+    }
 }
 
 inputs.forEach(input => {
