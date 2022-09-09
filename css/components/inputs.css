@@ -1,16 +1,40 @@
-.calculator__inputs{
-    display: grid;
-    grid-template-columns: repeat(4, 100px);
-    grid-template-rows: repeat(5, 100px);
+.calculator__inputs {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(5, 100px);
 }
 
-.input{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--black);
+  font-size: 1.4rem;
 }
 
-.equals{
-    grid-column: 4;
-    grid-row: 2/6;
+.input:nth-child(n) {
+  border-right: none;
+  border-bottom: none;
+}
+
+.input:nth-child(4),
+.input:last-child {
+  border-right: 1px solid var(--black);
+}
+
+.input:nth-child(14),
+.input:nth-child(15),
+.input:nth-child(16),
+.input:last-child {
+  border-bottom: 1px solid var(--black);
+}
+
+.operator,
+.equals {
+  background-color: var(--orange);
+}
+
+.equals {
+  grid-column: 4;
+  grid-row: 2/6;
 }

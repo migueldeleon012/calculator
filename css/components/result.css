@@ -1,0 +1,7 @@
+.calculator__result {
+  border: 1px solid var(--black);
+  border-bottom: none;
+  min-height: calc(2.5rem + 30px);
+  padding: 10px;
+  font-size: 2.5rem;
+}
