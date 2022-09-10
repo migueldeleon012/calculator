@@ -67,9 +67,11 @@ const operate = (firstNumber, operand, secondNumber, secondOperand) => {
       break;
     case '/':
       result = +firstNumber / +secondNumber;
-      resultContainer.innerHTML = `${result}${
-        secondOperand ? ` ${secondOperand} ` : ''
-      }`;
+      result === NaN
+        ? (resultContainer.innerHTML = 'Infinity')
+        : (resultContainer.innerHTML = `${result}${
+            secondOperand ? ` ${secondOperand} ` : ''
+          }`);
       break;
     default:
       return false;
