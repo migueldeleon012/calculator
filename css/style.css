@@ -1,4 +1,67 @@
-@import url('./abstracts/_global.css');
+/* @import url('./abstracts/_global.css');
 @import url('./abstracts/_variables.css');
 @import url('./components/inputs.css');
-@import url('./components/result.css');
+@import url('./components/result.css'); */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.calculator__result {
+  border: 1px solid rgb(29, 29, 29);
+  border-bottom: none;
+  min-height: calc(2.5rem + 30px);
+  padding: 10px;
+  font-size: 2.5rem;
+}
+
+.calculator__inputs {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(5, 100px);
+}
+
+.input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(29, 29, 29);
+  font-size: 1.4rem;
+}
+
+.input:nth-child(n) {
+  border-right: none;
+  border-bottom: none;
+}
+
+.input:nth-child(4),
+.input:last-child {
+  border-right: 1px solid rgb(29, 29, 29);
+}
+
+.input:nth-child(14),
+.input:nth-child(15),
+.input:nth-child(16),
+.input:last-child {
+  border-bottom: 1px solid rgb(29, 29, 29);
+}
+
+.operator,
+.equals {
+  background-color: rgb(247, 144, 40);
+}
+
+.equals {
+  grid-column: 4;
+  grid-row: 2/6;
+}
