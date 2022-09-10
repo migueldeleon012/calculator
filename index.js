@@ -94,7 +94,9 @@ handleInputClick = (e) => {
       resultContainer.textContent.length > 16
         ? false
         : splittedResult.length === 3
-        ? operate(firstNumber, operand, seconNumber, targetText)
+        ? splittedResult[splittedResult.length - 1] === ''
+          ? (resultContainer.textContent = `${firstNumber} ${targetText} `)
+          : operate(firstNumber, operand, seconNumber, targetText)
         : splittedResult[splittedResult.length - 1] === ''
         ? false
         : (resultContainer.textContent += ` ${targetText} `);
