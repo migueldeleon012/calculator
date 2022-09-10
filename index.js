@@ -120,9 +120,7 @@ handleInputClick = (e) => {
       operate(firstNumber, operand, seconNumber);
       break;
     default:
-      resultContainer.textContent === 'Number is too long'
-        ? (resultContainer.textContent = e.target.textContent)
-        : resultContainer.textContent.length <= 16
+      resultContainer.textContent.length <= 16
         ? (resultContainer.textContent += e.target.textContent)
         : false;
       break;
