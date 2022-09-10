@@ -94,15 +94,16 @@ handleInputClick = (e) => {
       resultContainer.textContent.length > 16
         ? false
         : splittedResult.length === 3
-        ? secondNumber === ''
+        ? splittedResult[splittedResult.length - 1] === ''
           ? (resultContainer.textContent = `${firstNumber} ${targetText} `)
           : operate(firstNumber, operand, seconNumber, targetText)
-        : secondNumber === ''
+        : splittedResult[splittedResult.length - 1] === ''
         ? false
         : (resultContainer.textContent += ` ${targetText} `);
       break;
     case '0':
-      secondNumber[0] === '0' && !secondNumber.includes('.')
+      splittedResult[splittedResult.length - 1][0] === '0' &&
+      !splittedResult[splittedResult.length - 1].includes('.')
         ? false
         : (resultContainer.textContent += targetText);
       break;
@@ -112,7 +113,8 @@ handleInputClick = (e) => {
     case '.':
       resultContainer.textContent.length > 16
         ? false
-        : secondNumber.includes(targetText) || secondNumber === ''
+        : splittedResult[splittedResult.length - 1].includes(targetText) ||
+          splittedResult[splittedResult.length - 1] === ''
         ? false
         : (resultContainer.textContent += targetText);
       break;
