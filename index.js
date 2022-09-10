@@ -99,6 +99,12 @@ handleInputClick = (e) => {
         ? false
         : (resultContainer.textContent += ` ${targetText} `);
       break;
+    case '0':
+      splittedResult[splittedResult.length - 1][0] === '0' &&
+      !splittedResult[splittedResult.length - 1].includes('.')
+        ? false
+        : (resultContainer.textContent += targetText);
+      break;
     case 'C':
       resultContainer.textContent = '';
       break;
